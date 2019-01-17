@@ -8,7 +8,7 @@
     border-radius: 10rem;
     transition: all .2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
 
     animation: moveInButton 1s;
   }
@@ -50,4 +50,28 @@
     transition: all .4s;
   }
 
+}
+
+.btn-text {
+  &:link, &:visited {
+    color: $color-prime;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: .1rem solid $color-prime;
+    padding: .3rem;
+    font-size: $default-font-size;
+    transition: all .4s;
+  }
+
+  &:hover {
+    background-color: $color-prime;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    transform: translateY(-.2rem);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    transform: translateY(0);
+  }
 }
