@@ -1,0 +1,113 @@
+// FUNCTIONALITY
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem; // Firefox compatibility
+  position: relative;
+  height: 50rem;
+
+  &__side {
+    height: 50rem;
+    color: $color-grey;
+    font-size: 2rem;
+    border-radius: .5rem;
+    overflow: hidden;
+
+    transition: all .8s ease-out;
+    box-shadow: 0 1rem 3rem rgba($color-black, .4);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+
+    &--front {
+      background-color: $color-grey-light;
+    }
+
+    &--back {
+      background-image: linear-gradient(to top left, $fsu-dark-garnet, $fsu-garnet);
+      transform: rotateY(-180deg);
+    }
+
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 20rem;
+    background-blend-mode: hue;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(to bottom right, $fsu-dark-garnet, $fsu-garnet),
+      url('../img/nat-5.jpg');
+    }
+    &--2 {
+      background-image: linear-gradient(to right bottom, #f3ede1, #ceb888),
+      url('../img/nat-6.jpg');
+    }
+    &--3 {
+      background-image: linear-gradient(to right bottom, #88A0CE, #3C5481),
+      url('../img/nat-7.jpg');
+    }
+
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: absolute;
+    top: 14rem;
+    right: 1rem;
+    text-align: right;
+    color: $color-grey-light;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($fsu-garnet, .85), rgba($fsu-dark-garnet, .85));
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba(#f3ede1, .85), rgba(#ceb888, .85));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba(#88A0CE, .85), rgba(#3C5481, .85));
+    }
+  }
+
+  &__details {
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 2rem auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: solid #eee .2rem;
+        }
+
+      }
+    }
+  }
+
+}
